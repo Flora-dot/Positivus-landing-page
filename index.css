@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+:root {
+    --padding:  30px 80px;
+    --Green: #B9FF66;
+    --Gray: #F3F3F3;
+    --Dark: #191A23;
+    --White: #FFFFFF;
+    --Black: #000000;
+}
+
+body {
+    padding: var(--padding);
+    font-family: "Space Grotesk", sans-serif;;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+}
+
+header ul li {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+header ul li button {
+    padding: 20px 35px;
+    border-radius: 15px;
+    background-color: transparent;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+header ul li button:hover {
+    background-color: var(--Green);
+    transition: 1s ease;
+}
+
+
+/* Hero section */
+
+.hero-section {
+    width: 100%;
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h3 {
+    font-size: 70px;
+    font-weight: 500;
+    margin: 0 8px;
+}
+
+.hero-text p {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.hero-text button {
+    margin: 20px 0;
+    padding: 20px 35px;
+    border-radius: 15px;
+    background-color: var(--Black);
+    color: var(--White);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.hero-image {
+    flex: 1;
+}
