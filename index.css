@@ -8,10 +8,13 @@
     --White: #FFFFFF;
     --Black: #000000;
 }
+* {
+    box-sizing: border-box;
+}
 
 body {
     padding: var(--padding);
-    font-family: "Space Grotesk", sans-serif;;
+    font-family: "Space Grotesk", sans-serif;
 }
 
 /* Header Section */
@@ -36,6 +39,16 @@ header ul li {
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
+    cursor: pointer;
+    background-image: linear-gradient(to right, var(--Green), var(--Green) );
+    background-size: 0% 2px; 
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+}
+
+header ul li:not(:last-child):hover {
+    background-size: 100% 4px; 
+    transition: background-size 0.3s ease;
 }
 
 header ul li button {
@@ -86,8 +99,279 @@ header ul li button:hover {
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
+    font-family: "Space Grotesk", sans-serif;
 }
 
 .hero-image {
     flex: 1;
+}
+
+/* Partnerships section*/
+.partners-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 70px;
+    justify-content: space-between;
+    filter: grayscale(5);
+}
+
+/* Services section */
+.services {
+    margin: 70px 0;
+}
+.services-intro {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.services-intro h2 {
+    background-color: var(--Green);
+    font-size: 40px;
+    font-weight: 500;
+    padding: 0 5px;
+    border-radius: 8px;
+}
+
+.services-intro p {
+    font-size: 20px;
+}
+
+.services-container {
+    width: 100%;
+    margin: 40px 0 70px;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.service-card {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+    padding: 50px;
+    border-radius: 45px;
+    box-shadow: 0 8px 0 var(--Black);
+}
+
+.service-card h4 {
+    width: fit-content;
+    margin: 0;
+    font-size: 30px;
+    padding: 2px 5px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.service-card.one {
+    background-color: var(--Gray);
+}
+
+.service-card.one h4,
+.service-card.four h4 {
+    background-color: var(--Green);
+}
+
+.service-card.two {
+    background-color:var(--Green) ;
+}
+
+.service-card.two h4,
+.service-card.three h4,
+.service-card.five h4,
+.service-card.six h4 {
+    background-color: var(--White);
+}
+
+.service-card.three {
+    background-color: var(--Black);
+}
+
+.service-card.three p,
+.service-card.six p {
+    color: var(--White);
+}
+
+.service-card.four {
+    background-color: var(--Gray);
+}
+
+.service-card.five {
+    background-color: var(--Green);
+}
+
+.service-card.six {
+    background-color: var(--Black);
+}
+
+
+.service-card .card-cta {
+    margin: 70px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-cta button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+}
+
+.service-card.one .card-cta button,
+.service-card.two .card-cta button,
+.service-card.four .card-cta button,
+.service-card.five .card-cta button {
+    background-color: var(--Black);
+}
+
+.service-card.three .card-cta button,
+.service-card.six .card-cta button {
+    background-color: var(--White);
+}
+
+.service-card.three .card-cta svg,
+.service-card.six .card-cta svg {
+    fill: #000000;
+}
+
+.proposal-section {
+    margin: 100px 0;
+    width: 100%;
+    height: 347px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--Gray);
+    padding: 0 60px;
+    border-radius: 45px;
+}
+
+.proposal-section div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.proposal-section div h5 {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.proposal-section div p {
+    font-size: 20px;
+}
+
+.proposal-section div button {
+    margin: 20px 0;
+    width: 320px;
+    padding: 20px 35px;
+    border-radius: 15px;
+    background-color: var(--Black);
+    color: var(--White);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.proposal-section img {
+    height: 380px;
+}
+
+/* Case studies section */
+.case-studies_intro {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.case-studies_intro h2 {
+    background-color: var(--Green);
+    font-size: 40px;
+    font-weight: 500;
+    padding: 0 5px;
+    border-radius: 8px;
+}
+
+.case-studies_intro p {
+    font-size: 20px;
+}
+
+.case-wrapper {
+    display: flex;
+    gap: 64px;
+    background-color: var(--Black);
+    color: var(--White);
+    padding: 70px 60px;
+    border-radius: 45px;
+}
+
+.case-wrapper .case-study {
+    padding: 0 40px;
+    
+}
+
+.case-wrapper > .case-study:nth-child(2) {
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+}
+
+.case-study div {
+    display: flex;
+    gap: 20px;
+}
+
+.case-study div p {
+    color: var(--Green);
+    font-size: 20px;
+}
+
+/* Work process section */
+
+.work-process-section {
+    margin: 90px 0;
+}
+
+.working-process-wrapper {
+    margin: 45px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.work-tab {
+    padding: 41px 60px;
+    border-radius: 45px;
+    box-shadow: 1px 4px var(--Black);
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid var(--Black);
+    background-color: var(--Gray);
+}
+
+.work-tab div {
+    display: flex;
+    gap: 20px;
+}
+
+.work-tab div h1 {
+    font-size: 60px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.work-tab div h2 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.work-tab button {
+    height: 58px;
+    width: 58px;
+    border-radius: 50%;
 }
