@@ -1,30 +1,18 @@
-slideIndex = 1;
-switchSlides(slideIndex);
+let toggleBtns = document.getElementsByClassName('tab-btn');
+let tabInfo = document.getElementsByClassName('tab-info');
+let workTabs = document.getElementsByClassName('work-tabs')
 
-
-// Next/previous controls
-function plusSlides(n) {
-    switchSlides(slideIndex += n);
+function showTabInfo() {
+    Array.from(tabInfo).forEach(tab => {
+        if (tab.style.display === 'none') {
+            tab.style.display = 'block';
+            // workTabs.style.background-color = '#B9FF66';
+        } else {
+            tab.style.display = 'none';
+        }
+    });
 }
 
-// Thumbnail image controls
-function currentSlide(n) {
-    switchSlides(slideIndex = n);
-}
-
-function switchSlides(n) {
-    let i;
-    let testimonialSlides = document.getElementsByClassName('testimonial-card');
-    let dots = document.getElementsByClassName("dots");
-    if (n > testimonialSlides.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = testimonialSlides.length}
-    // for (i = 0; i < testimonialSlides.length; i++) {
-    //     testimonialSlides[i].style.className= "";  
-    // }
-    testimonialSlides[slideIndex-1].style.className = "slide";  
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    dots[slideIndex-1].className += " active";
-}
-
+Array.from(toggleBtns).forEach(toggleBtn => {
+    toggleBtn.addEventListener('click', showTabInfo);
+});

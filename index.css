@@ -65,6 +65,13 @@ header ul li button:hover {
     transition: 1s ease;
 }
 
+header button {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    display: none;
+}
 
 /* Hero section */
 
@@ -106,11 +113,16 @@ header ul li button:hover {
     width: 50%;
 }
 
+.hero-image img {
+    width: 100%;
+}
+
 /* Partnerships section*/
 .partners-section {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    /* grid-template-columns: repeat(7, 1fr); */
     gap: 70px;
     justify-content: space-between;
     filter: grayscale(5);
@@ -354,11 +366,14 @@ header ul li button:hover {
     padding: 41px 60px;
     border-radius: 45px;
     box-shadow: 1px 4px var(--Black);
+    border: 1px solid var(--Black);
+    background-color: var(--Gray);
+}
+
+.work-tab-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid var(--Black);
-    background-color: var(--Gray);
 }
 
 .work-tab div {
@@ -382,6 +397,13 @@ header ul li button:hover {
     width: 58px;
     border-radius: 50%;
 }
+
+.work-tab p {
+    display: none;
+    padding: 15px 0 0;
+    border-top: 1px solid var(--Black);
+}
+
 
 /* Team Section */
 .team-wrapper {
@@ -711,6 +733,83 @@ footer a.privacy {
 
 
 
+
+@media (max-width:900px) {
+    body{
+        padding: 30px 30px;
+    }
+
+    header ul {
+        display: none;
+    }
+
+    header button {
+        display: block;
+    }
+
+    .hero-section {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero-text h3 {
+        font-size: 50px;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .hero-image img {
+        width: 80%;
+    }
+
+    .service-card {
+        flex-direction: column;
+    }
+
+    .case-wrapper {
+        background-color: transparent;
+        overflow-x: scroll;
+        scrollbar-width: none;
+        padding: 30px;
+        border-radius: 0;
+        gap: 30px;
+    }
+
+    .case-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .case-wrapper .case-study *{
+        padding: 20px;
+        border-radius: 45px;
+        width: 400px;  
+    }
+
+    .team-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-form {
+        padding: 30px;
+    }
+
+    .footer-links-wrapper {
+        flex-direction: column;
+    }
+
+    footer .contact-info-wrapper  {
+        gap: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
 @media (max-width:600px) {
     body{
         padding: 30px 10px 0;
@@ -719,6 +818,10 @@ footer a.privacy {
     header ul {
         display: none;
     }
+
+    header button {
+        display: block;
+    }
     
     .hero-section {
         flex-direction: column;
@@ -726,6 +829,10 @@ footer a.privacy {
 
     .hero-text {
         width: 100%;
+    }
+
+    .hero-text h3 {
+        font-size: 50px;
     }
 
     .hero-image,
@@ -765,7 +872,7 @@ footer a.privacy {
         background-color: transparent;
         overflow-x: scroll;
         scrollbar-width: none;
-        padding: 20px;
+        padding: 30px;
         border-radius: 0;
         gap: 30px;
     }
@@ -776,7 +883,7 @@ footer a.privacy {
 
     .case-wrapper .case-study *{
         padding: 20px;
-        border-radius: 15px;
+        border-radius: 45px;
         width: 400px;  
     }
 
@@ -790,6 +897,16 @@ footer a.privacy {
 
     .work-tab div h2 {
         font-size: 20px;
+    }
+
+    .work-tab button {
+        height: 35px;
+        width: 40px;
+    }
+
+    .work-tab button img {
+        width: 14px;
+        height: 14px;
     }
 
     .team-wrapper {
@@ -829,12 +946,8 @@ footer a.privacy {
     .footer-links-wrapper,
     .footer-links-wrapper ul {
         flex-direction: column;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .footer-links-wrapper .cta {
-        order: 3;
+        /* justify-content: center; */
+        /* text-align: center; */
     }
 
     footer .contact-info-wrapper  {
@@ -853,8 +966,9 @@ footer a.privacy {
         border-radius: 20px;
     }
 
-    footer form button {
-        width: 290px;
+    footer form button,
+    footer form input{
+        width: 250px;
     }
 
     footer span, 
